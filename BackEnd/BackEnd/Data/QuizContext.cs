@@ -1,7 +1,7 @@
 ﻿using BackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BackEnd
+namespace BackEnd.Data
 {
     public class QuizContext : DbContext
     {

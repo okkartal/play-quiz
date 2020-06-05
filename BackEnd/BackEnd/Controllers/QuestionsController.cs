@@ -1,4 +1,5 @@
 ﻿using BackEnd.Models;
+using BackEnd.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -37,7 +38,7 @@ namespace BackEnd.Controllers
         {
             var quiz = _context.Quiz.Where(x => x.Id == question.QuizId);
 
-            if(quiz == null)
+            if (quiz == null)
             {
                 return NotFound();
             }
@@ -48,9 +49,9 @@ namespace BackEnd.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id,[FromBody]Question question)
+        public async Task<IActionResult> Put(int id, [FromBody]Question question)
         {
-            if(id != question.Id)
+            if (id != question.Id)
             {
                 return BadRequest();
             }

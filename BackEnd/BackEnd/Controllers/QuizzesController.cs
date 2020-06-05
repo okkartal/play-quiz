@@ -1,4 +1,6 @@
 ﻿using BackEnd.Models;
+using BackEnd.Data;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -32,10 +34,10 @@ namespace BackEnd.Controllers
 
         [HttpGet]
         [Route("all")]
-        public  async Task<IEnumerable<Quiz>> GetAllQuizzes()
+        public async Task<IEnumerable<Quiz>> GetAllQuizzes()
         {
 
-            return  await _context.Quiz.ToListAsync();
+            return await _context.Quiz.ToListAsync();
         }
 
         // GET: api/Quizzes/5

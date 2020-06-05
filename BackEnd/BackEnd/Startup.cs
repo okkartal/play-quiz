@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using BackEnd.Data;
+
 
 namespace BackEnd
 {
@@ -34,7 +36,7 @@ namespace BackEnd
             services.AddControllers();
             services.AddDbContext<QuizContext>(options => options.UseInMemoryDatabase("quiz"));
             services.AddDbContext<UserDbContext>(options => options.UseInMemoryDatabase("user"));
-           
+
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UserDbContext>();
 
             var signinKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is the secret phrase"));
@@ -76,7 +78,7 @@ namespace BackEnd
             app.UseRouting();
 
             app.UseAuthorization();
-     
+
 
             app.UseEndpoints(endpoints =>
             {
