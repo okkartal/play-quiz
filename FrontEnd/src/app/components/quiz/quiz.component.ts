@@ -7,7 +7,7 @@ import { ApiService } from '../../services/api.service';
 })
 
 export class QuizComponent{
- 
+    
     quiz:any={};
 
     constructor(public api : ApiService) {} 
@@ -15,5 +15,4 @@ export class QuizComponent{
     ngOnInit(){
         this.api.quizSelected.subscribe(quiz => this.quiz = quiz);
     }
-
 }

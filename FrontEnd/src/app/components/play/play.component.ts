@@ -9,7 +9,7 @@ import { ApiService } from '../../services/api.service';
 export class PlayComponent{
  
     quizzes; 
-
+    
     constructor(public api : ApiService) {} 
 
     ngOnInit(){
@@ -17,5 +17,4 @@ export class PlayComponent{
          this.quizzes = res
      });
     }
-
 }

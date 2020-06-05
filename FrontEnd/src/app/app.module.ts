@@ -77,4 +77,5 @@ const routes = [
   bootstrap: [AppComponent],
   entryComponents : [FinishedComponent]
 })
+
 export class AppModule { }

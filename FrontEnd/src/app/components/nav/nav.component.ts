@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
                 <button *ngIf="auth.isAuthenticated" mat-button (click)="auth.logout()">Logout</button>
             </mat-toolbar>`
 })
+
 export class NavComponent { 
 
   constructor(public auth : AuthService){}

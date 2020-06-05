@@ -7,10 +7,10 @@ import { ApiService } from '../../services/api.service';
 })
 
 export class QuizzesComponent{
- 
+
     quiz = {};
     quizzes;
-
+    
     constructor(public api : ApiService) {} 
 
     ngOnInit(){

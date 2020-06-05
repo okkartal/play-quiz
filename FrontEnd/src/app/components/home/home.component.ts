@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   template: '<quiz></quiz><quizzes></quizzes>'
 })
 
-export class HomeComponent { 
-}
+export class HomeComponent { }
