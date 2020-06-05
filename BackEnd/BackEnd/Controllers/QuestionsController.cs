@@ -44,7 +44,9 @@ namespace BackEnd.Controllers
             }
 
             _context.Questions.Add(question);
+
             await _context.SaveChangesAsync();
+
             return Ok(question);
         }
 
@@ -57,7 +59,9 @@ namespace BackEnd.Controllers
             }
 
             _context.Entry(question).State = EntityState.Modified;
+
             await _context.SaveChangesAsync();
+
             return Ok(question);
 
         }

@@ -35,11 +35,9 @@ namespace BackEnd.Controllers
                 return BadRequest();
             }
 
-
             await _signInManager.SignInAsync(user, isPersistent: false);
 
             return Ok(CreateToken(user));
-
         }
 
         [HttpPost]
@@ -64,7 +62,6 @@ namespace BackEnd.Controllers
             {
                 new Claim(JwtRegisteredClaimNames.Sub,user.Id)
             };
-
 
             var signinKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is the secret phrase"));
 
