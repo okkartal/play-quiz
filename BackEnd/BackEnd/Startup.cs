@@ -1,3 +1,4 @@
+using BackEnd.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,7 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using BackEnd.Data;
 
 
 namespace BackEnd
@@ -31,7 +31,6 @@ namespace BackEnd
                  .AllowAnyMethod()
                  .AllowAnyHeader();
              }));
-
 
             services.AddControllers();
             services.AddDbContext<QuizContext>(options => options.UseInMemoryDatabase("quiz"));
@@ -75,7 +74,6 @@ namespace BackEnd
             app.UseRouting();
 
             app.UseAuthorization();
-
 
             app.UseEndpoints(endpoints =>
             {
