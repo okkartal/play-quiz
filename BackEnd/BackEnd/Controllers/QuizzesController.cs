@@ -103,7 +103,6 @@ namespace BackEnd.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetQuiz", new { id = quiz.Id }, quiz);
-
         }
 
         // DELETE: api/Quizzes/5

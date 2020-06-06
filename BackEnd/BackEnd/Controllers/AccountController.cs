@@ -70,7 +70,6 @@ namespace BackEnd.Controllers
             var jwt = new JwtSecurityToken(signingCredentials: signingCredentials, claims: claims);
 
             return new JwtSecurityTokenHandler().WriteToken(jwt);
-
         }
     }
 }

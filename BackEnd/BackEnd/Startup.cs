@@ -39,9 +39,6 @@ namespace BackEnd
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UserDbContext>();
 
-            var signinKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is the secret phrase"));
-
-
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -52,7 +49,7 @@ namespace BackEnd
                 cfg.SaveToken = true;
                 cfg.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    IssuerSigningKey = signinKey,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is the secret phrase")),
                     ValidateAudience = false,
                     ValidateIssuer = false,
                     ValidateLifetime = false,
